@@ -1,0 +1,35 @@
+# STM32CubeMX generated files
+**/*.ld
+**/*.bin
+**/*.hex
+**/*.elf
+**/*.map
+**/*.list
+**/*.srec
+**/*.d
+
+# Build artifacts
+**/build/
+**/Debug/
+**/Release/
+
+**/Drivers/
+**/cmake/
+**/CMakeFiles/
+
+**/*.o
+**/*.obj
+**/*.d
+**/*.a
+**/*.lib
+**/*.so
+**/*.exe
+**/*.out
+
+# root artifacts
+**/*.json
+**/Cmake_install.cmake
+**/CMakeCache.txt
+**/*.ninja
+**/.mxproject
+**/*.s
