@@ -72,9 +72,7 @@ target_compile_definitions(lvgl PUBLIC
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-    UtilsLib
     lvgl
-    lvgl_examples
     # Add user defined libraries
 )
 
