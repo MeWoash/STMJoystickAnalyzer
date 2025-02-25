@@ -18,8 +18,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 # Set the project name
-set(CMAKE_PROJECT_NAME tft_display)
-set(GIT_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+set(CMAKE_PROJECT_NAME STMJoystickAnalyzer)
 
 # Include toolchain file
 include("cmake/gcc-arm-none-eabi.cmake")
@@ -39,7 +38,6 @@ add_executable(${CMAKE_PROJECT_NAME})
 
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
-add_subdirectory(Lib/uart)
 add_subdirectory(Lib/lvgl)
 
 # Link directories setup
@@ -60,7 +58,6 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${UI_C_FILES})
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Src/ui
 )
 
 # Add project symbols (macros)
@@ -69,7 +66,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 )
 
 target_compile_definitions(lvgl PUBLIC 
-    LV_CONF_PATH=${CMAKE_CURRENT_SOURCE_DIR}/Lib/lvgl/lv_conf.h
+    LV_CONF_PATH=${CMAKE_CURRENT_SOURCE_DIR}/Lib/lv_conf.h
 )
 
 # Add linked libraries

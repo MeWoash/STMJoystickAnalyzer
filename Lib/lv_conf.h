@@ -275,7 +275,7 @@
  *-----------*/
 
 /*Enable the log module*/
-#define LV_USE_LOG 1
+#define LV_USE_LOG 0
 #if LV_USE_LOG
 
     /*How important log should be added:
@@ -788,7 +788,7 @@
 #define LV_USE_LIBJPEG_TURBO 0
 
 /*GIF decoder library*/
-#define LV_USE_GIF 1
+#define LV_USE_GIF 0
 #if LV_USE_GIF
     /*GIF decoder accelerate*/
     #define LV_GIF_CACHE_DECODE_DATA 0

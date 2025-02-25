@@ -1,15 +1,11 @@
 #include "alt_main.h"
 #include "lcd.h"
 #include "spi.h"
-#include <math.h>
 #include "lvgl_adapter.h"
 #include "lvgl.h"
 #include <stdio.h>
 
-extern UART_HandleTypeDef huart2;
-UART_HandleTypeDef& txHuart = huart2;
 extern ADC_HandleTypeDef hadc2;
-
 
 void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 {
