@@ -1,11 +1,9 @@
 #include "alt_main.h"
-#include "uartTx.h"
 #include "lcd.h"
 #include "spi.h"
 #include <math.h>
 #include "lvgl_adapter.h"
 #include "lvgl.h"
-#include "ui.h"
 #include <stdio.h>
 
 extern UART_HandleTypeDef huart2;
@@ -158,7 +156,6 @@ void setup()
     HAL_ADCEx_Calibration_Start(&hadc2, ADC_SINGLE_ENDED);
     // HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc1Values, 2);
 
-    lv_log_register_print_cb([](lv_log_level_t level, const char* buf){ writeUart(buf); });
     initLvgl();
     lcdInit();          // Create existing sinus chart
     setupAdditionalUI();  // Add the label and ADC chart with dark theme

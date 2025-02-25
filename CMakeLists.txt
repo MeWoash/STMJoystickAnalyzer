@@ -40,6 +40,7 @@ add_executable(${CMAKE_PROJECT_NAME})
 # Add STM32CubeMX generated sources
 add_subdirectory(cmake/stm32cubemx)
 add_subdirectory(Lib/uart)
+add_subdirectory(Lib/lvgl)
 
 # Link directories setup
 target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
@@ -67,7 +68,9 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined symbols
 )
 
-include(Lib/lvgl/lvglConfig.cmake)
+target_compile_definitions(lvgl PUBLIC 
+    LV_CONF_PATH=${CMAKE_CURRENT_SOURCE_DIR}/Lib/lvgl/lv_conf.h
+)
 
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
